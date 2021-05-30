@@ -9,6 +9,7 @@
     "start": "list"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
     "js-beautify": "^1.7.5",
     "list": "^1.0.0",
     "lodash.debounce": "^4.0.8",

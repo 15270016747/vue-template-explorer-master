@@ -29,15 +29,16 @@ import 'codemirror/mode/vue/vue.js'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/base16-dark.css'
 import 'codemirror/theme/base16-light.css'
-
 import { compile } from 'vue-template-compiler/build.js'
 import { codemirror } from 'vue-codemirror'
 import debounce from 'lodash.debounce'
 import beautify from 'js-beautify'
 import stripWith from 'vue-template-es2015-compiler'
 import serverRenderer from 'vue-server-renderer/basic'
+// import vueLoader from 'vue-loader'
 import Vue from 'vue'
-
+// const test = require('./test.vue')
+import test from './test.vue'
 export default {
   name: 'app',
   components: { codemirror },
@@ -59,7 +60,7 @@ export default {
         mode: 'text/javascript',
         readOnly: true,
         theme: 'base16-dark'
-      }
+      },
     }
   },
   computed: {
@@ -88,6 +89,15 @@ export default {
     }
   },
   mounted () {
+    console.log(test.render)
+  //   var reader = new FileReader();
+  // reader.readAsText('./test.vue');
+  // reader.onload = (e) => {
+  //   console.log(e.target.result);
+  // };
+    // const template = fs.readFileSync('./test.vue','utf-8')
+    // console.log(template)
+    // console.log(compile(this.$children[1].$el+'',{ preserveWhitespace: false }))
     const hashInput = window.location.hash.slice(1)
     this.input = hashInput
       ? decodeURIComponent(hashInput)
